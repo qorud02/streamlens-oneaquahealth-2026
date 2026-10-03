@@ -4,6 +4,13 @@ An offline-first citizen stream observation desk, built for the OneAquaHealth IE
 
 StreamLens turns a visit into a traceable observation, separates documentation gaps from review urgency, and gives a person the final review decision. It runs entirely in the browser without an account, API key, paid service or external map.
 
+## Live prototype and demonstration
+
+- [Use StreamLens](https://qorud02.github.io/streamlens-oneaquahealth-2026/)
+- [Watch the 4-minute 49-second demonstration](https://share.descript.com/view/KJh8WX2qWAw)
+
+The video combines captured interface screens with execution of the actual review, export and import functions. It uses synthetic example observations.
+
 ## Run
 
 Node.js 20 or later is sufficient. There are no package dependencies.
@@ -19,7 +26,7 @@ Any static web server can serve this directory. HTTPS or localhost enables servi
 
 ## Try the complete workflow
 
-1. Explore the 16 synthetic training scenarios. The five site names and every seed reading are fictional.
+1. Explore the 16 synthetic example observations. The five site names and every seed reading are fictional.
 2. Open SL-014 to inspect an aquatic-life distress report. Its review priority remains visible even when documentation is incomplete.
 3. Compare SL-012 and SL-013: the same observer at the same site within an hour is a potential repeated entry. A different observer remains independent evidence.
 4. Add an observation, leave unmeasured numeric fields blank, and inspect the explanation before selecting a review action.
@@ -41,9 +48,9 @@ Any static web server can serve this directory. HTTPS or localhost enables servi
 
 ## Data and interpretation
 
-The initial dataset is constructed for training and demonstration. Every record carries `origin: synthetic`. A user can explicitly create `origin: field` observations; the app does not create real field measurements automatically. Neither the reach diagram nor the fictional station coordinates represent actual geography.
+The initial dataset is constructed as example observations for demonstration. Every record carries `origin: synthetic`. A user can explicitly create `origin: field` observations; the app does not create real field measurements automatically. Neither the reach diagram nor the fictional station coordinates represent actual geography.
 
-The engine organises human follow-up work. It is deterministic JavaScript, with no machine-learning model or remote AI classifier. Its default oxygen and pH triggers are prototype workspace settings rather than regulatory thresholds or a validated ecological assessment. See [METHODS.md](METHODS.md) for the source mapping, design rationale and limitations.
+The engine organises human follow-up work. Its priority engine applies deterministic JavaScript rules. Its default oxygen and pH triggers are prototype workspace settings rather than regulatory thresholds or a validated ecological assessment. See [METHODS.md](METHODS.md) for the source mapping, design rationale and limitations.
 
 No individual health, drinking-water, bathing-water or discharge-compliance decision is calculated. Biological context, instrument quality and programme-specific sampling protocols need trained interpretation.
 
@@ -65,6 +72,6 @@ Exports may contain observer aliases and site names. Review them before sharing.
 
 ## Next steps
 
-Pilot the observation form with a community monitoring group; measure completion time and inter-reviewer consistency. Agree local review triggers with that group's coordinator, attach versioned programme guidance, and validate any OneAquaHealth interoperability profile before an integration. Add explicit photo-backup and synchronisation choices after that pilot. No pilot, external integration or FHIR conformance is claimed in this entry.
+Pilot the observation form with a community monitoring group; measure completion time and inter-reviewer consistency. Agree local review triggers with that group's coordinator, attach versioned programme guidance, and validate any OneAquaHealth interoperability profile before an integration. Add explicit photo-backup and synchronisation choices after that pilot.
 
 Created for the 2026 hackathon by Kyunghan Bae. Released under the MIT License.
